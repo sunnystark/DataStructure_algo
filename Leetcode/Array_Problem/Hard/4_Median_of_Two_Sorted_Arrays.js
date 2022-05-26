@@ -27,9 +27,11 @@ The overall run time complexity should be O(log (m+n)).
 
  var findMedianSortedArrays = function(nums1, nums2) {
     let resulr, start, end, mid
+   // marge both the sorted array
     let a = ([...nums1,...nums2])
+    // try to do sort we can compress the login eg. [...nums1,...nums2].sort()
     let res =  a.sort((a,b) => a-b)
-    
+    // here I am checking marge array even / odd based on marge array length
       if(res.length % 2 === 0){
           mid = Math.floor(res.length / 2)
           start = res.slice(0,mid) , end = res.slice(mid)
@@ -39,7 +41,7 @@ The overall run time complexity should be O(log (m+n)).
          resulr = res[mid]
      }
     
-    
+   // return a complete array 
    return resulr
        
    }
